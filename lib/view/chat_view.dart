@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/widgets/chat_area.dart';
 
 class ChatView extends StatelessWidget {
   const ChatView({super.key});
@@ -17,7 +18,7 @@ class ChatView extends StatelessWidget {
         ),
         title: const Text('MrBeast 🤑😎💸'),
       ),
-      body: Container(),
+      body: const ChatArea(),
     );
   }
 }

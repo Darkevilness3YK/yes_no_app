@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/widgets/message_bubble.dart';
 
 class ChatArea extends StatelessWidget {
   const ChatArea({super.key});
@@ -15,7 +16,7 @@ class ChatArea extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 100,
                 itemBuilder: (context, index) {
-                  return Text('Index: $index');
+                  return const MessageBubble();
                 },
               ),
             ),
