@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yes_no_app/widgets/chat_bubbles/friend_message_bubble.dart';
 import 'package:yes_no_app/widgets/chat_bubbles/my_message_bubble.dart';
+import 'package:yes_no_app/widgets/shared/message_field_box.dart';
 
 class ChatArea extends StatelessWidget {
   const ChatArea({super.key});
@@ -21,6 +22,7 @@ class ChatArea extends StatelessWidget {
                 },
               ),
             ),
+            const MessageFieldBox(),
             const Text('Mundo'),
           ],
         ),
