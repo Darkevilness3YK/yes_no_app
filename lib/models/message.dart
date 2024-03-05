@@ -1,5 +1,5 @@
 enum FromWho {
-  mine,
+  me,
   friend,
 }
 
