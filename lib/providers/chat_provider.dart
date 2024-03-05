@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/api/api_yes_no_wtf.dart';
 import 'package:yes_no_app/models/message.dart';
 
 class ChatProvider extends ChangeNotifier {
   final ScrollController chatScrollController = ScrollController();
+  final ApiYesNoWtf apiYesNoWtf = ApiYesNoWtf();
 
   List<Message> messageList = [
     Message(text: '¡Hola!', fromWho: FromWho.me),
@@ -10,11 +12,21 @@ class ChatProvider extends ChangeNotifier {
     Message(text: 'No', fromWho: FromWho.friend),
   ];
 
+  Future<void> friendReply() async {
+    final Message friendMessage = await apiYesNoWtf.GetYesNoAnswer();
+    messageList.add(friendMessage);
+
+    notifyListeners();
+    moveScrollToBottom();
+  }
+
   Future<void> sendMessage(String text) async {
     if (text.isEmpty) return;
 
     final myNewMessage = Message(text: text, fromWho: FromWho.me);
     messageList.add(myNewMessage);
+
+    if (text.endsWith('?')) await friendReply();
 
     notifyListeners();
     moveScrollToBottom();
