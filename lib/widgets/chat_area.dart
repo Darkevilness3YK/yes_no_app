@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:yes_no_app/models/message.dart';
+import 'package:yes_no_app/providers/chat_provider.dart';
 import 'package:yes_no_app/widgets/chat_bubbles/friend_message_bubble.dart';
 import 'package:yes_no_app/widgets/chat_bubbles/my_message_bubble.dart';
 import 'package:yes_no_app/widgets/shared/message_field_box.dart';
@@ -8,6 +11,8 @@ class ChatArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final chatProvider = context.watch<ChatProvider>();
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -15,9 +20,12 @@ class ChatArea extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
-                itemCount: 100,
+                itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
-                  return (index % 2 == 0) ? const FriendMessageBubble() : const MyMessageBubble();
+                  final message = chatProvider.messageList[index];
+                  return (message.fromWho == FromWho.friend)
+                      ? FriendMessageBubble(messageText: message.text)
+                      : MyMessageBubble(messageText: message.text);
                 },
               ),
             ),

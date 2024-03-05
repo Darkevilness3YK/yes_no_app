@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:yes_no_app/widgets/chat_bubbles/image_bubble.dart';
 
 class FriendMessageBubble extends StatelessWidget {
-  const FriendMessageBubble({super.key});
+  final String messageText;
+
+  const FriendMessageBubble({
+    super.key,
+    required this.messageText,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +22,11 @@ class FriendMessageBubble extends StatelessWidget {
             color: colorScheme.secondary,
             borderRadius: BorderRadius.circular(20.0),
           ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Text(
-              'Dolor sit amet',
-              style: TextStyle(color: Colors.white),
+              messageText,
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         ),
