@@ -6,11 +6,7 @@ class ChatProvider extends ChangeNotifier {
   final ScrollController chatScrollController = ScrollController();
   final ApiYesNoWtf apiYesNoWtf = ApiYesNoWtf();
 
-  List<Message> messageList = [
-    Message(text: '¡Hola!', fromWho: FromWho.me),
-    Message(text: '¿Me das dinero?', fromWho: FromWho.me),
-    Message(text: 'No', fromWho: FromWho.friend),
-  ];
+  List<Message> messageList = [];
 
   Future<void> friendReply() async {
     final Message friendMessage = await apiYesNoWtf.getYesNoAnswer();
