@@ -29,7 +29,11 @@ class ChatArea extends StatelessWidget {
                 },
               ),
             ),
-            const MessageFieldBox(),
+            MessageFieldBox(
+              // The commented line is the equivalent of the uncommented line. Although, commented line is redundant.
+              // onValue: (value) => chatProvider.sendMessage(value),
+              onValue: chatProvider.sendMessage,
+            ),
           ],
         ),
       ),
