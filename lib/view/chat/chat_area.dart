@@ -35,6 +35,7 @@ class ChatArea extends StatelessWidget {
               // onValue: (value) => chatProvider.sendMessage(value),
               onValue: chatProvider.sendMessage,
             ),
+            const SizedBox(height: 10.0),
           ],
         ),
       ),
