@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ImageBubble extends StatelessWidget {
-  const ImageBubble({super.key});
+  final String imageUrl;
 
+  const ImageBubble({
+    super.key,
+    required this.imageUrl,
+  });
+
+  // Without API images:
   // Yes image: https://yesno.wtf/assets/yes/14-b57c6dc03aa15a4b18f53eb50d6197ee.gif
   // No image: https://yesno.wtf/assets/no/23-5fe6c1ca6c78e7bf9a7cf43e406fb8db.gif
   @override
@@ -12,7 +18,7 @@ class ImageBubble extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.0),
       child: Image.network(
-        'https://yesno.wtf/assets/no/23-5fe6c1ca6c78e7bf9a7cf43e406fb8db.gif',
+        imageUrl,
         width: deviceSize.width * 0.7,
         height: 150.0,
         fit: BoxFit.cover,

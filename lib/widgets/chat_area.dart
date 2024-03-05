@@ -25,7 +25,7 @@ class ChatArea extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final message = chatProvider.messageList[index];
                   return (message.fromWho == FromWho.friend)
-                      ? FriendMessageBubble(messageText: message.text)
+                      ? FriendMessageBubble(message: message)
                       : MyMessageBubble(messageText: message.text);
                 },
               ),

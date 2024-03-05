@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/classes/message_class.dart';
 import 'package:yes_no_app/widgets/chat_bubbles/image_bubble.dart';
 
 class FriendMessageBubble extends StatelessWidget {
-  final String messageText;
+  final Message message;
 
   const FriendMessageBubble({
     super.key,
-    required this.messageText,
+    required this.message,
   });
 
   @override
@@ -25,13 +26,13 @@ class FriendMessageBubble extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Text(
-              messageText,
+              message.text,
               style: const TextStyle(color: Colors.white),
             ),
           ),
         ),
         const SizedBox(height: 5.0),
-        const ImageBubble(),
+        ImageBubble(imageUrl: message.imageUrl!),
         const SizedBox(height: 10.0),
       ],
     );
