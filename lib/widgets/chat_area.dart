@@ -13,7 +13,6 @@ class ChatArea extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
           children: [
-            const Text('Hola'),
             Expanded(
               child: ListView.builder(
                 itemCount: 100,
@@ -23,7 +22,6 @@ class ChatArea extends StatelessWidget {
               ),
             ),
             const MessageFieldBox(),
-            const Text('Mundo'),
           ],
         ),
       ),
