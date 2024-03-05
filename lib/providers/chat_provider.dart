@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yes_no_app/api/api_yes_no_wtf.dart';
-import 'package:yes_no_app/models/message.dart';
+import 'package:yes_no_app/classes/message_class.dart';
 
 class ChatProvider extends ChangeNotifier {
   final ScrollController chatScrollController = ScrollController();
@@ -13,7 +13,7 @@ class ChatProvider extends ChangeNotifier {
   ];
 
   Future<void> friendReply() async {
-    final Message friendMessage = await apiYesNoWtf.GetYesNoAnswer();
+    final Message friendMessage = await apiYesNoWtf.getYesNoAnswer();
     messageList.add(friendMessage);
 
     notifyListeners();

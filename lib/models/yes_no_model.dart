@@ -26,7 +26,7 @@
 
 import 'dart:convert';
 
-import 'package:yes_no_app/models/message.dart';
+import 'package:yes_no_app/classes/message_class.dart';
 
 YesNoModel yesNoModelFromJson(String str) => YesNoModel.fromJson(json.decode(str));
 

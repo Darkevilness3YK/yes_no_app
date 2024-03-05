@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:yes_no_app/models/message.dart';
+import 'package:yes_no_app/classes/message_class.dart';
 import 'package:yes_no_app/providers/chat_provider.dart';
 import 'package:yes_no_app/widgets/chat_bubbles/friend_message_bubble.dart';
 import 'package:yes_no_app/widgets/chat_bubbles/my_message_bubble.dart';

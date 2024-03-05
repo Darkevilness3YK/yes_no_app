@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:yes_no_app/models/message.dart';
+import 'package:yes_no_app/classes/message_class.dart';
 import 'package:yes_no_app/models/yes_no_model.dart';
 
 class ApiYesNoWtf {
