@@ -32,7 +32,9 @@ class FriendMessageBubble extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 5.0),
-        ImageBubble(imageUrl: message.imageUrl!),
+        ImageBubble(
+            imageUrl: message.imageUrl ??
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE3CETL_OertJKScoHfblxs6CBrKGVCmVESw'),
         const SizedBox(height: 10.0),
       ],
     );
